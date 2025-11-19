@@ -1,0 +1,471 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<style>
+.dynamic-hero {
+  position: relative;
+  padding: 64px 80px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.dynamic-hero::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: {{ section.settings.gradient_color }};
+  filter: blur(100px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0px 4px 150px 300px #9333EA40;
+  
+
+}
+
+.dynamic-hero-container {
+  display: flex;
+  align-items: center;
+  gap:80px;
+  max-width: 1280px;
+  padding:0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.dh-left h2 {
+ font-family: 'Cormorant';
+font-weight: 700;
+font-size: 56px;
+line-height: 67px;
+letter-spacing: -1.4px;
+background: linear-gradient(90deg, #9333EA 0%, #2563EB 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.dh-left p {
+  margin-bottom: 15px;
+}
+
+.dh-btn {
+  display: inline-block;
+background: linear-gradient(90deg, #9333EA 0%, #2563EB 100%);
+border: 1px solid #00000033;
+padding:12px 24px;
+font-family: 'Opensans-Semibold';
+font-weight: 600;
+font-size: 16px;
+line-height: 24.8px;
+letter-spacing: 0.6px;
+color:#FFFFFF;
+}
+
+.dh-review-link {
+  display: block;
+  margin-top: 16px;
+  text-decoration: underline;
+ font-family: 'Opensans-Regular';
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0px;
+text-transform: capitalize;
+color: #000000CC;
+text-decoration:none;
+border-bottom:1px solid #000;
+width:fit-content;
+}
+.dh-left, .dh-right{
+width:50%;
+}
+.dh-left h2{
+margin-bottom:24px;
+}
+.dh-right img,
+.dh-right video {
+  width: 100%;
+}
+.dh-left p{
+font-family: 'Opensans-Regular';
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+line-height: 25.8px;
+letter-spacing: 0px;
+color: #000000CC;
+margin:0px 0px 32px 0px;
+}
+.review-slider {
+  max-width: 900px;
+  margin: 48px auto 0;
+  text-align: center;
+}
+
+.review-item {
+  padding: 20px;
+}
+
+.dh-stars {
+  margin-bottom: 5px;
+  font-size: 18px;
+  display:flex;
+  justify-content:center;
+  margin:0;
+}
+
+.review-title {
+font-family: 'Opensans-Semibold';
+font-weight: 600;
+font-size: 22px;
+line-height: 34.1px;
+letter-spacing: 0.6px;
+text-align: center;
+color:#000000;
+max-width:768px;
+width:100%;
+text-align:center;
+margin:0 auto 16px auto;
+}
+.review-item{
+border-top: 1px solid #00000080 !important;
+padding-top:48px;
+}
+.dh-sep {
+  margin: 0 11px;
+}
+
+@media(max-width: 768px){
+  .dynamic-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dh-left, .dh-right {
+    width: 100%;
+  }
+}
+
+
+.star-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:11px;
+}
+.star-content p{
+margin:0;
+display:flex;
+align-items:center;
+}
+.review_txt{
+font-family: 'Opensans-Regular';
+font-weight: 400;
+font-size: 14px;
+line-height: 21.7px;
+letter-spacing: 0.6px;
+color: #000000CC;
+}
+.review_date{
+font-family: 'Opensans-Regular';
+font-weight: 400;
+font-size: 12px;
+line-height: 18.6PX;
+letter-spacing: 0.6px;
+color: #000000CC;
+}
+.slick-next{
+border:1px solid #000000;
+right:0 !important;
+width:32px;
+height:32px;
+}
+.slick-next:before{
+content:url('https://cdn.shopify.com/s/files/1/0957/8224/0628/files/arrow_forward_4.svg?v=1763553334') !important;
+padding:8px !important;
+opacity:1 !important;
+}
+.slick-dots li button, .slick-dots li, .slick-dots li button:before, .slick-dots li.slick-active button:before{
+padding:0px !important;
+width:8px !important;
+height:8px !important;
+}
+.slick-dots li.slick-active button:before{
+opacity:1 !important;
+}
+@media (max-width:1366px){
+.dynamic-hero{
+padding:60px 50px;
+}
+.dh-left h2{
+font-size:50px;
+line-height:44px;
+}
+}
+@media (max-width:989px){
+.dynamic-hero{
+padding:50px 30px;
+}
+.dynamic-hero-container{
+gap:50px;
+}
+}
+@media (max-width:749px){
+.dynamic-hero{
+padding:48px 16px;
+}
+    .dh-left h2 {
+        font-size: 56px;
+        line-height: 67.2px;
+        margin-bottom:12px;
+    }
+    .dh-left p{
+    margin-bottom:24px;
+    }
+    .dh-review-link{
+    margin:16px auto 0px;
+    }
+    .dynamic-hero-container{
+    gap:24px;
+    }
+    .review-slider{
+    margin-top:24px;
+    }
+    .review-item{
+    padding-top:24px;
+    padding-bottom:0px;
+    }
+    .dynamic-hero::after{
+    box-shadow: 0px 4px 150px 200px #9333EA26;
+    width: 150px;
+    height: 150px;
+    }
+    .review-item{
+    padding:0;
+    padding-top:24px;
+    }
+    .slick-next{
+    display:none !important;
+    }
+    .review-title{
+    font-size:18px;
+    line-height:27.9px;
+    }
+}
+</style>
+
+<section 
+  class="dynamic-hero"
+  style="background-image:url('{{ section.settings.bg_image | img_url: 'master' }}');"
+>
+  <div class="gradient-overlay" 
+       style="background: {{ section.settings.gradient_color }};">
+  </div>
+
+  <div class="dynamic-hero-container">
+
+
+    <div class="dh-left">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.desc != blank %}
+        <p>{{ section.settings.desc }}</p>
+      {% endif %}
+
+      {% if section.settings.btn_text != blank %}
+        <a href="{{ section.settings.btn_url }}" class="dh-btn">{{ section.settings.btn_text }}</a>
+      {% endif %}
+
+      {% if section.settings.review_text != blank %}
+        <a class="dh-review-link" href="{{ section.settings.review_link }}">
+          {{ section.settings.review_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="dh-right">
+
+  {% if section.settings.hero_video != blank %}
+    <video autoplay muted loop playsinline>
+      {% for source in section.settings.hero_video.sources %}
+        <source src="{{ source.url }}" type="{{ source.mime_type }}">
+      {% endfor %}
+    </video>
+
+  {% elsif section.settings.image != blank %}
+    <img src="{{ section.settings.image | img_url: 'master' }}">
+  {% endif %}
+
+</div>
+
+  </div>
+
+  <!-- REVIEW SLIDER -->
+  <div class="review-slider">
+    {% for block in section.blocks %}
+      <div class="review-item">
+        
+
+        {% if block.settings.review_title != blank %}
+          <h4 class="review-title">{{ block.settings.review_title }}</h4>
+        {% endif %}
+        <div class="star-content">
+<div class="dh-stars">
+          {% for i in (1..block.settings.stars) %}
+            
+<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.65739 0L8.22899 4.83688H13.3148L9.20029 7.82624L10.7719 12.6631L6.65739 9.67376L2.5429 12.6631L4.1145 7.82624L-1.43051e-06 4.83688H5.0858L6.65739 0Z" fill="black" fill-opacity="0.8"/>
+</svg>
+
+          {% endfor %}
+        </div>
+        <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 5.255V1.77641C7.04201 2.35992 5.93132 2.72257 4.7707 2.8308C4.9023 1.81111 5.32695 0.837217 6.00501 0H2.02991C2.6967 0.838344 3.11111 1.81032 3.23478 2.82599C2.06957 2.71081 0.956695 2.3392 0 1.74582V5.22447C0.95799 4.64096 2.06868 4.27832 3.2293 4.17009C3.09754 5.18947 2.6729 6.16304 1.99499 7H5.97009C5.30344 6.16189 4.88905 5.19022 4.76522 4.17483C5.93043 4.29001 7.0433 4.66162 8 5.255Z" fill="#9333EA"/>
+</svg>
+        <p>
+          <span class="review_txt">{{ block.settings.review_text }}</span>
+          <span class="dh-sep"><svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 5.255V1.77641C7.04201 2.35992 5.93132 2.72257 4.7707 2.8308C4.9023 1.81111 5.32695 0.837217 6.00501 0H2.02991C2.6967 0.838344 3.11111 1.81032 3.23478 2.82599C2.06957 2.71081 0.956695 2.3392 0 1.74582V5.22447C0.95799 4.64096 2.06868 4.27832 3.2293 4.17009C3.09754 5.18947 2.6729 6.16304 1.99499 7H5.97009C5.30344 6.16189 4.88905 5.19022 4.76522 4.17483C5.93043 4.29001 7.0433 4.66162 8 5.255Z" fill="#9333EA"/>
+</svg></span>
+         
+
+ <span class="review_date">{{ block.settings.review_date }}</span>
+        </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $('.review-slider').slick({
+    autoplay: false,
+    autoplaySpeed: 2500,
+    dots: true,
+    arrows: true,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Dynamic Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color",
+      "label": "Right Bottom Gradient Color",
+      "default": "#efe1ff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Review Text",
+      "default": "Over 100,000+ Happy Customers"
+    },
+    {
+      "type": "url",
+      "id": "review_link",
+      "label": "Review Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Side Image"
+    },
+    {
+      "type": "video",
+      "id": "hero_video",
+      "label": "Upload Video"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Item",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Review Title",
+          "default": "Amazing Product!"
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "type": "text",
+          "id": "review_date",
+          "label": "Review Date",
+          "default": "22/09/1996"
+        }
+      ]
+    }
+  ],
+
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Dynamic Hero Banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}

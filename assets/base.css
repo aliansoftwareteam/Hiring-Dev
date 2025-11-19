@@ -4296,3 +4296,23 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+/* font family */
+@font-face {
+  font-family: 'Cormorant';
+  src: url('https://cdn.shopify.com/s/files/1/0957/8224/0628/files/Cormorant-Bold.ttf?v=1763539381')format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Opensans-Regular';
+  src: url('https://cdn.shopify.com/s/files/1/0957/8224/0628/files/OpenSans-Regular.ttf?v=1763539510')format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Opensans-Semibold';
+  src: url('https://cdn.shopify.com/s/files/1/0957/8224/0628/files/OpenSans-SemiBold.ttf?v=1763539510')format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
